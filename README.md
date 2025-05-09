@@ -1,4 +1,6 @@
-# AI
+Here is the cleaned-up version of your `README.md` with proper formatting:
+
+---
 
 # 🏀 Sport Ball Detection - YOLOv5 Project
 
@@ -6,10 +8,10 @@ This project uses **YOLOv5** to detect basketballs in videos. It is built with P
 
 ## 🚀 Features
 
-- Detects basketballs in images and videos
-- Trained on custom dataset from game scenes
-- Supports video input, outputs detection results
-- Lightweight and easy to run locally
+* Detects basketballs in images and videos
+* Trained on custom dataset from game scenes
+* Supports video input, outputs detection results
+* Lightweight and easy to run locally
 
 ## 🖼️ Sample Detection Image
 
@@ -25,7 +27,7 @@ Here is the demo video showcasing the detection in action:
 
 ## 🔧 How to Use
 
-# bash
+```bash
 # Clone the repo
 git clone https://github.com/johnsonshen369/AI.git
 cd AI/sport_ball_detect
@@ -35,9 +37,11 @@ pip install -r requirements.txt
 
 # Run detection
 python detect.py --weights models/yolov5x6.pt --source clip.mp4
+```
 
+## 📁 Project Structure
 
-#Project Structure
+```
 sport_ball_detect/
 ├── detect.py               # Main script to run detection
 ├── models/                 # Pre-trained models
@@ -48,47 +52,76 @@ sport_ball_detect/
 ├── images/                   # Dataset folder (images & labels)
 ├── requirements.txt        # Dependencies
 └── README.md               # Project documentation
+```
 
-#Model Training
-1.To train your own YOLOv5 model on basketball data:
-Prepare your dataset: Organize your images and labels in the following format:
+## 🏋️ Model Training
+
+To train your own YOLOv5 model on basketball data:
+
+1. **Prepare your dataset**: Organize your images and labels in the following format:
+
+```
+dataset/
 ├── images/
 │   ├── train/        # Training images
 │   └── val/          # Validation images
 ├── labels/
 │   ├── train/        # Training labels
 │   └── val/          # Validation labels
+```
 
-2.Train the model using YOLOv5:
+2. **Train the model** using YOLOv5:
+
+```bash
 python train.py --img 640 --batch 16 --epochs 50 --data data.yaml --weights yolov5s.pt
+```
 
-3.Monitor the training with TensorBoard (optional):
+3. **Monitor the training** with TensorBoard (optional):
+
+```bash
 tensorboard --logdir=runs
+```
 
-#Contributing
+## 🧑‍💻 Contributing
+
 We welcome contributions to improve the project! Here's how you can help:
-Fork the repository and create a new branch (git checkout -b feature-name).
-Make your changes.
-Commit your changes (git commit -am 'Add new feature').
-Push to your branch (git push origin feature-name).
-Create a Pull Request describing your changes.
+
+1. **Fork the repository** and create a new branch (`git checkout -b feature-name`).
+2. **Make your changes**.
+3. **Commit** your changes (`git commit -am 'Add new feature'`).
+4. **Push** to your branch (`git push origin feature-name`).
+5. **Create a Pull Request** describing your changes.
+
 Feel free to suggest new features or improvements. All contributions are appreciated!
 
-#Requirements
+## 🛠️ Requirements
+
 This project depends on the following libraries:
-Python 3.x
-PyTorch
-OpenCV
-NumPy
-Matplotlib
-YOLOv5 repository (for model architecture)
+
+* **Python 3.x**
+* **PyTorch**
+* **OpenCV**
+* **NumPy**
+* **Matplotlib**
+* **YOLOv5 repository** (for model architecture)
+
 To install the dependencies:
 
-##Acknowledgments
-YOLOv5 for the detection model: https://github.com/ultralytics/yolov5
-OpenCV for image and video processing
-PyTorch for model training and deployment
-Dataset contributors for providing game footage and labels
+```bash
+pip install -r requirements.txt
+```
 
-##License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 🌐 Acknowledgments
+
+* **YOLOv5** for the detection model: [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)
+* **OpenCV** for image and video processing
+* **PyTorch** for model training and deployment
+* **Dataset** contributors for providing game footage and labels
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+This should give you a clean, well-organized `README.md` with all necessary sections included. Let me know if you need anything else!
