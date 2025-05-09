@@ -1,0 +1,39 @@
+
+MODEL TRAIN:
+
+# 第一步：安装 YOLOv5 及其依赖项
+!pip install torch torchvision torchaudio
+!git clone https://github.com/ultralytics/yolov5
+%cd yolov5
+!pip install -U -r requirements.txt
+
+# 第二步：上传你的自定义数据集（images/train, images/val, labels/train, labels/val）
+# 可以使用 Google Drive 来上传数据集并在 Colab 中挂载它。
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+# 假设你已将数据集上传到 Google Drive，以下是访问数据集的示例代码
+# 将 'your_dataset_folder' 替换为你数据集的路径
+dataset_path = '/content/drive/MyDrive/your_dataset_folder'
+
+# 第三步：创建自定义数据集的配置文件（yaml）
+# 该 YAML 文件内容如下：
+
+# custom_data.yaml
+"""
+train: /content/drive/MyDrive/your_dataset_folder/images/train
+val: /content/drive/MyDrive/your_dataset_folder/images/val
+
+nc: 1  # 类别数量（例如，检测篮球）
+names: ['basketball']  # 类别名称
+"""
+
+# 将上面的 YAML 文件保存为 'custom_data.yaml' 并放在当前工作目录下
+
+# 第四步：训练模型
+!python train.py --img 640 --batch 16 --epochs 50 --data /content/drive/MyDrive/your_dataset_folder/custom_data.yaml --weights yolov5s.pt --cache
+
+# 第五步：训练完成后查看结果
+# 你可以使用以下命令查看模型的性能和输出结果
+!python detect.py --weights runs/train/exp/weights/best.pt --img 640 --source /content/drive/MyDrive/your_video_or_images_folder
