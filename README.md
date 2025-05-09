@@ -21,7 +21,7 @@ This project uses **YOLOv5** to detect basketballs in videos. It is built with P
 
 Here is the demo video showcasing the detection in action:
 
-[Watch the demo video](sport_ball_detect/yolov5/output_with_balls.mp4)
+[Watch the demo video](sport_ball_detect/yolov5/compressed_output.mp4)
 
 > Tip: You can also upload the video to the "Releases" section or use an external host (e.g., YouTube, Streamable) for better accessibility.
 
